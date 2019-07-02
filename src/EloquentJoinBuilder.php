@@ -224,7 +224,13 @@ class EloquentJoinBuilder extends Builder
         if (!$this->selected && count($relations) > 1) {
             $this->selected = true;
             $this->selectRaw($baseTable.'.*');
-            $this->groupBy($baseTable.'.'.$basePrimaryKey);
+            if (is_array($basePrimaryKey)) { // composite primary keys support
+                foreach ($basePrimaryKey as $primaryKey) {
+                    $this->groupBy($baseTable.'.'.$primaryKey);
+                }
+            } else {
+                $this->groupBy($baseTable.'.'.$basePrimaryKey);
+            }
         }
 
         return $currentTableAlias.'.'.$column;
