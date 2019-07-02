@@ -1,5 +1,5 @@
 {
-    "name": "pandora-team/eloquent-join-relations",
+    "name": "pandora-team/eloquent-join",
     "description": "This package introduces the join magic for eloquent models and relations.",
     "keywords": [
         "laravel join",
@@ -8,7 +8,7 @@
         "laravel where join",
         "laravel join relation"
     ],
-    "homepage": "https://github.com/PandoraTeam/eloquent-join-relations",
+    "homepage": "https://github.com/PandoraTeam/eloquent-join",
     "license": "MIT",
     "authors": [
 		{
