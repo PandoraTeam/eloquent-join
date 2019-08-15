@@ -285,6 +285,8 @@ class EloquentJoinBuilder extends Builder
             } elseif ('onlyTrashed' == $method) {
                 call_user_func_array([$join, 'where'], [$relatedTableAlias.'.deleted_at', '<>', null]);
             }
+        } elseif ($method === 'withoutGlobalScopes') {
+            //do nothing
         } else {
             throw new InvalidRelationClause();
         }
